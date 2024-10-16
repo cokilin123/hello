@@ -11,7 +11,6 @@ bot=commands.Bot(command_prefix='a!', intents=intents)
 
 @bot.event
 async def on_ready():
-    await bot.sync_commands()
     print('Bot is online!')
 
 @bot.command()
