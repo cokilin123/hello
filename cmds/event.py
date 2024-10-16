@@ -3,11 +3,9 @@ from discord.ext import commands
 from core.classes import Cog_extension
 import google.generativeai as genai
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 
-genai.configure(api_key=os.getenv('googleaiKey'))
+genai.configure(api_key=os.environ.get('googleaiKey'))
 model = genai.GenerativeModel('gemini-pro')
 
 class Event(Cog_extension):
