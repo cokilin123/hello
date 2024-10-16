@@ -9,13 +9,9 @@ import subprocess
 import os
 import csv
 import time
+from core.classes import Cog_extension
 
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
-
-# 初始化bot
-intents = discord.Intents.default()                      # 啟用預設權限
-intents.message_content = True                           # 讓bot可以讀訊息
-bot = commands.Bot(command_prefix='[', intents=intents)  # 設置命令前綴
 
 if not os.path.exists("output"):
     os.makedirs("output")
@@ -106,10 +102,7 @@ def generatesrt(csv_file):
             rows.append(txt)  # 讀取csv檔並寫入srt
         return rows
 
-class Convert(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
-    
+class Convert(Cog_extension):
         if not os.path.exists("output"):
             os.makedirs("output")
 
