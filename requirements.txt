@@ -1,0 +1,7 @@
+py-cord
+discord
+flask
+google.generativeai
+yt-dlp
+pandas
+faster-whisper
