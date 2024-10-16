@@ -3,6 +3,8 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import os
 import asyncio
+from keep_alive import keep_alive
+keep_alive()
 
 intents=discord.Intents.all()
 
@@ -35,4 +37,4 @@ for filename in os.listdir('./cmds'):
         bot.load_extension(f"cmds.{filename[:-3]}")
 
 if __name__ == '__main__':
-    bot.run(os.getenv('token'))
+    bot.run(os.environ.get('token'))
